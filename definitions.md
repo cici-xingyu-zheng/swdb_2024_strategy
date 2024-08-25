@@ -13,6 +13,5 @@ As a result of the above contingencies, the number of times a given image is sho
 
 Any false alarm licks (licks that occur outside of the 750 ms reward window and 3 second consumption window following an image change) will abort the trial and the same image will continue to be repeated for the designated number of presentations selected for that trial. As an example, if the change time drawn for a given trial is 8 flashes, and the mouse emits a false alarm lick after 4 flashes, the trial is aborted and the same image continues to be shown for 8 more flashes, giving a total of 16 image repetitions before a change will occur. This serves to discourage false alarms by requiring that mice withhold licking in order to see an image change and have an opportunity for a reward.
 
-<html>
-<img src="https://allenswdb.github.io/_images/task_flow.png>
-</html>
+![Task Flow](https://allenswdb.github.io/_images/task_flow.png)
+
