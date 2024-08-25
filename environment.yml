@@ -1,0 +1,54 @@
+# SWDB 2024 conda environment
+# Version: 0.0
+name: swdb2024
+channels:
+  - defaults
+dependencies:
+#  - python=3.9.4
+  - python=3.9.*
+  - pip=24.0
+  - ipykernel=6.28.0
+  - ipython
+  - ipywidgets=8.1.2
+  - jupyter=1.0.0
+  - jupyterlab=4.0.11
+  - matplotlib-inline=0.1.6
+  - nbclient=0.8.0
+  - nbconvert=7.10.0
+  - nbformat=5.9.2
+  - notebook=7.0.8
+  - scikit-learn=1.4.2
+  - pip:
+      - allensdk==2.16.2
+      - brain-observatory-utilities==0.3.1
+      - brainglobe-atlasapi==2.0.6
+      - brainglobe-space==1.0.2
+      - caveclient==5.22.0
+      - cloud-volume==10.0.0
+      - h5py==3.11.0
+      - hdmf==3.14.1
+      - imageio==2.34.2
+      - imageio-ffmpeg==0.5.1
+      - imageryclient==1.0.4
+      - jax==0.1.8
+      - jupyterlab-myst==2.4.2
+      - jupytext==1.16.2
+      - k3d==2.16.1
+      - matplotlib==3.9.0
+      - meshparty==1.16.14
+      - myst-nb==1.1.1
+      - myst-parser==2.0.0
+      - neuroglancer==2.39.2
+      - nglui==3.3.1
+      - numpy==1.23.5
+      - pandas==1.5.3
+      - papermill==2.6.0
+      - pynwb==2.8.0
+      - scipy==1.10.1
+      - seaborn==0.13.2
+      - skeleton-plot==0.0.10
+      - standard-transform==1.4.0
+      - statsmodels==0.14.2
+      - trimesh==4.4.3
+      - umap-learn==0.5.6
+      - xarray==2023.1.0
