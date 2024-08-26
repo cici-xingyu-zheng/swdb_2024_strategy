@@ -38,10 +38,10 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 
 ![first dirty fit](piet_modelfit/first_weights.png)
 
-    - ignored: 
-        1. one defination QC check (`licked`, but the variable was undefined somehow);
-        2. the regression model for timing should be re fitted; 
-        3. the detailed logic of defining the `bouts`, which is probably why 1 occured;
+- ignored: 
+    1. one defination QC check (`licked`, but the variable was undefined somehow);
+    2. the regression model for timing should be re fitted; 
+    3. the detailed logic of defining the `bouts`, which is probably why 1 occured;
 
 #### TO-DOs: 
 1. fix the ignored problems;
@@ -49,4 +49,10 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 3. keep brainstorming new strategies; "regret" (the first false alarm lick) was an idea through talking to my roomate 
 4. ways to get behaviral data direction without getting ecepyhs session? 
 
+#### General qestions: 
+1. why we see > 5 consecutive aborted trails?
+![aborted](plots/explore/aborted_entire_session.pdf)
+
+2. is start of trail right after the change, or right after 3 sec grace period if hit trial?
+![trial](plots/explore/example_session_period.pdf)
 
