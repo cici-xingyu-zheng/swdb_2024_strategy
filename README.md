@@ -1,4 +1,5 @@
 ## Info
+***
 
 We document in this repo the progress of modeling and inferring lick behavior in the Allen Visual Behavior Neuropixel Dataset.
 
@@ -35,6 +36,7 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 | Saturday 9:00 – 12:00 | Project presentations |
 
 ## Log of progress
+***
 
 ### 08/25/24
 
