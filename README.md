@@ -21,8 +21,10 @@ This will be the behavior focused branch in the group project.
 
 
 ####  Alex Piet's work:
-1.  [Licking Behavior Ecephys](https://github.com/AllenInstitute/licking_behavior_NP)
-2.  [Licking Behavior Ophys](https://github.com/alexpiet/licking_behavior/tree/master)
+<!-- [Licking Behavior Ecephys](https://github.com/AllenInstitute/licking_behavior_NP) -->
+
+
+- [Licking Behavior Ophys](https://github.com/alexpiet/licking_behavior/tree/master)
 
 Note that both repos use some internal/local load paths that are a bit hard to parse what they really are... we also have different permission to access files.
 
