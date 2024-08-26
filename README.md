@@ -1,12 +1,15 @@
 ## Info
 ***
 
-We document in this repo the progress of modeling and inferring lick behavior in the Allen Visual Behavior Neuropixel Dataset.
+We document in this repo the progress of modeling and inferring lick behavior in the Allen Visual Behavior Neuropixel Dataset. 
+
+This will be the behavior focused branch in the group project. 
+
 
 ### Data
-- here we load from a local hard drive; 
-- but can be alternatively obtained from the cloud server (Amzn S3 bucket);
-- noticed that we don't seem to be able to modify some session attributes, like the `stimulus_presentations` df
+- here I load from a local hard drive; 
+- but one can be alternatively obtained from the cloud server (Amzn S3 bucket);
+- noticed that I don't seem to be able to modify some session attributes, like the `stimulus_presentations` df
 
 ***
 
@@ -21,11 +24,12 @@ We document in this repo the progress of modeling and inferring lick behavior in
 1.  [Licking Behavior Ecephys](https://github.com/AllenInstitute/licking_behavior_NP)
 2.  [Licking Behavior Ophys](https://github.com/alexpiet/licking_behavior/tree/master)
 
-Note that both use some internal/local load paths that are a bit hard to parse what they really are.
+Note that both repos use some internal/local load paths that are a bit hard to parse what they really are... we also have different permission to access files.
 
 ####  `psytrack` package:
-- [repo](https://github.com/nicholas-roy/psytrack/blob/master/psytrack/examples/ExampleNotebook.ipynb)
-- We have installed it; the example ran very smoothly in `/psytrack_example` folder
+- [psytrack repo](https://github.com/nicholas-roy/psytrack/blob/master/psytrack/examples/ExampleNotebook.ipynb)
+- We have installed it;
+- the example ran very smoothly; see the `/psytrack_example` folder
 
 ***
 
@@ -49,6 +53,7 @@ Note that both use some internal/local load paths that are a bit hard to parse w
     1. one defination QC check (`licked`, but the variable was undefined somehow);
     2. the regression model for timing should be re fitted; 
     3. the detailed logic of defining the `bouts`, which is probably why 1 occured;
+    4. I didn't pay attention at all how the exact choice of `y`'s set up, not something I expected. 
 
 #### TO-DOs: 
 1. fix the ignored problems;
@@ -56,6 +61,7 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 3. keep brainstorming new strategies; "regret" (the first false alarm lick) was an idea through talking to my roomate 
 4. ways to get behaviral data direction without getting ecepyhs session? 
 5. any ways to change file write permission? 
+6. go through in more detail `psytrack`'s usage
 
 #### General qestions: 
 1. why we see `> 5` consecutive aborted trails?
