@@ -21,7 +21,7 @@ This will be the behavior focused branch in the group project.
 
 
 ####  Alex Piet's work:
-<!-- [Licking Behavior Ecephys](https://github.com/AllenInstitute/licking_behavior_NP) -->
+<!-- -[Licking Behavior Ecephys](https://github.com/AllenInstitute/licking_behavior_NP) -->
 
 
 - [Licking Behavior Ophys](https://github.com/alexpiet/licking_behavior/tree/master)
@@ -67,9 +67,11 @@ Note that both repos use some internal/local load paths that are a bit hard to p
 6. go through in more detail `psytrack`'s usage
 
 #### General qestions: 
-1. why we see `> 5` consecutive aborted trails?
-![aborted](plots/explore/aborted_entire_session.pdf)
+1. why we see `> 5` consecutive aborted trails? 
+_Answer (from Marina):_  that is very likely; as the 5 trials specify the fixed number of frames, but after 5, same image will still be flashed 
+![aborted](plots/explore/aborted_entire_session.pdf) 
 
 2. is start of trail right after the change, or right after 3 sec grace period if hit trial?
 ![example trial](plots/explore/example_session_period.pdf)
-
+_Answer (from Marina):_ no matter hit or miss, the mice will get a 4-flashes grace period; then the draw specify the # of frames from:
+![the geometric dist](https://allenswdb.github.io/_images/change_time_trial_types.png)
