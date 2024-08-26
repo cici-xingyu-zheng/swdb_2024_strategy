@@ -54,5 +54,5 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 ![aborted](plots/explore/aborted_entire_session.pdf)
 
 2. is start of trail right after the change, or right after 3 sec grace period if hit trial?
-![trial](plots/explore/example_session_period.pdf)
+![example trial](plots/explore/example_session_period.pdf)
 
