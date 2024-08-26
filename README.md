@@ -45,7 +45,7 @@ Note that both repos use some internal/local load paths that are a bit hard to p
 ### 08/25/24
 
 1. Get familiarized with `stim_table` and `trials` dataFrames. 
-2. Ran the most basic inference for a ecephys mouse in a very quick dirty manner;
+2. Ran the most basic inference for a ecephys session in a very quick dirty manner;
 
 ![first dirty fit](piet_modelfit/first_weights.png)
 
