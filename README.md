@@ -48,6 +48,7 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 2. model evidence, CV, etc;
 3. keep brainstorming new strategies; "regret" (the first false alarm lick) was an idea through talking to my roomate 
 4. ways to get behaviral data direction without getting ecepyhs session? 
+5. any ways to change file write permission? 
 
 #### General qestions: 
 1. why we see `> 5` consecutive aborted trails?
