@@ -50,7 +50,7 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 4. ways to get behaviral data direction without getting ecepyhs session? 
 
 #### General qestions: 
-1. why we see > 5 consecutive aborted trails?
+1. why we see `> 5` consecutive aborted trails?
 ![aborted](plots/explore/aborted_entire_session.pdf)
 
 2. is start of trail right after the change, or right after 3 sec grace period if hit trial?
