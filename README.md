@@ -37,7 +37,8 @@ Note that both repos use some internal/local load paths that are a bit hard to p
 
 | Time | Event |
 |------|-------|
-| Saturday 9:00 – 12:00 | Project presentations |
+| Saturday Aug 24 10:00 – 12:00 | Project proposal presentations |
+| Saturday Aug 21 9:00 – 12:00 | Project presentations |
 
 ***
 ## Log of progress

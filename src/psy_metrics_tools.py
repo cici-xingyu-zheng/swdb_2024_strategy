@@ -177,7 +177,7 @@ def annotate_bouts_loc(session, stimulus_presentations):
     stimulus_presentations = stimulus_presentations.copy()
     stimulus_duration = 0.75  # Assuming 750ms stimulus duration
 
-    # Create 'licked' column
+    # Create 'licked' column; 
     stimulus_presentations['licked'] = False
     for _, stim in stimulus_presentations.iterrows():
         stim_start = stim['start_time']
