@@ -66,6 +66,10 @@ Note that both repos use some internal/local load paths that are a bit hard to p
 5. any ways to change file write permission? 
 6. go through in more detail `psytrack`'s usage
 
+### 08/26/24
+Fixed the directly loading behaviral session issue;
+Michael and Saskia said they don't recommending re-writing the attribute, and some files are fetched (?) which is fair;
+
 #### General qestions: 
 1. why we see `> 5` consecutive aborted trails? 
 _Answer (from Marina):_  that is very likely; as the 5 trials specify the fixed number of frames, but after 5, same image will still be flashed 
@@ -75,3 +79,7 @@ _Answer (from Marina):_  that is very likely; as the 5 trials specify the fixed 
 ![example trial](plots/explore/example_session_period.pdf)
 _Answer (from Marina):_ no matter hit or miss, the mice will get a 4-flashes grace period; then the draw specify the # of frames from:
 ![the geometric dist](https://allenswdb.github.io/_images/change_time_trial_types.png)
+
+3. clarification from Marina about the logic behind the timing strategy:
+It more like serving the minimum wait time the mouse is oaky to bear, against it's lick urge, as 4 frames is the most frequent and also the least amount of time its willing to bear.
+
