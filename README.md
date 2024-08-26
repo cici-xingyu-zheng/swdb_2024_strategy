@@ -8,7 +8,7 @@ We document in this repo the progress of modeling and inferring lick behavior in
 
 ### Useful resourses
 
-#### `allensdk` or about the experiment
+#### The experiment:
 
 - [change_detetion_task](https://allenswdb.github.io/physiology/stimuli/visual-behavior/VB-Behavior.html#change-detection-task)
 
@@ -33,5 +33,20 @@ Note that both use some internal/local load paths that are a bit hard to parse w
 
 ### 08/25/24
 
+1. Get familiarized with `stim_table` and `trials` dataFrames. 
+2. Ran the most basic inference for a ecephys mouse in a very quick dirty manner;
+
+![first dirty fit](piet_modelfit/first_weights.png)
+
+    - ignored: 
+        1. one defination QC check (`licked`, but the variable was undefined somehow);
+        2. the regression model for timing should be re fitted; 
+        3. the detailed logic of defining the `bouts`, which is probably why 1 occured;
+
+#### TO-DOs: 
+1. fix the ignored problems;
+2. model evidence, CV, etc;
+3. keep brainstorming new strategies; "regret" (the first false alarm lick) was an idea through talking to my roomate 
+4. ways to get behaviral data direction without getting ecepyhs session? 
 
 
