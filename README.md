@@ -68,21 +68,35 @@ Note that both repos use some internal/local load paths that are a bit hard to p
 7. plot inter lick interval as well!!! 
 
 ### 08/26/24
-Fixed the directly loading behaviral session issue;
-Michael and Saskia said they don't recommending re-writing the attribute, and some files are fetched (?) which is fair;
 
-Will use compare cross-validated log-likelihood to compare across models;
+Fixed the directly loading behaviral session issue;
+Michael and Saskia said they don't recommending re-writing the attribute, and some files are fetched (?) fair.. I don't understand everything but it doesn't affect us too much.
+
+Will use compare cross-validated log-likelihood to compare across models; but why there's such a big difference between cv and whole model fit?
+
+I ran into push issue but this helped (maybe loading sessions? but how come?)
+
+```
+git config http.postBuffer 524288000
+```
+
+#### A quick quick summary for how the Inference is set up (Roy 2018a):
+
+Actually it's pretty smart; maybe it's just my first time seeing this time diff trick. All weights, concatinated, can be expressed as a function of eta, and thus gaussian (eta = DW, where D is a banded matrix calculating time differece). Then the log posterior \propto log evidence + log prior can be written out, and that has a sparse Hessian, and thus inference can use 2nd order method with sparse operation.
+
+After getting wMAP, updated hyperparams by Laplace approximation, and then update log-evidence.
+  
 
 1. read the psytrack paper [done];
-2. method and notebook read the Roy 2018a NeurIPS paper;
+2. method and notebook read the Roy 2018a NeurIPS paper [first pass, read the function docs];
 3. bout definition, inter-bout-interval;
 4. email 
+
 
 Visualize design matrix, for some frames in the example session:
 ![Xy](plots/explore/design_mat.png) 
 
 
-#### Set of metrics to look at for learning dynamics:
 
 ***
 
