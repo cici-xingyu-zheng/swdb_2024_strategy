@@ -322,21 +322,24 @@ def format_session(session,stimulus_presentations, format_options):
 
     # Process behavior annotations
     df['y'] = np.array([2 if x else 1 for x in 
-        stimulus_presentations.bout_start.values])
+        stimulus_presentations.bout_start.values]) # predict bout start
     df['images_since_last_lick'] = stimulus_presentations.groupby(\
         stimulus_presentations['bout_end'].cumsum()).cumcount(ascending=True)
     df['timing_input'] = [x+1 for x in df['images_since_last_lick'].shift(fill_value=0)]
     df['included'] = ~df['in_lick_bout']
 
     # Build Strategy regressors
-    df['task0']      = np.array([1 if x else 0 for x in df['change']])
+
+    # He used multiple ways {0 1} or {-1 1} or {-1 0} for the same thing
+
+    df['task0']      = np.array([1 if x else 0 for x in df['change']]) # task change reward, use 0 or 1 to encode
     df['task1']      = np.array([1 if x else -1 for x in df['change']])
-    df['late_task0'] = df['task0'].shift(1,fill_value=0)
+    df['taskCR']     = np.array([0 if x else -1 for x in df['change']]) 
+    df['late_task0'] = df['task0'].shift(1,fill_value=0) # okay change history
     df['late_task1'] = df['task1'].shift(1,fill_value=-1)
-    df['taskCR']     = np.array([0 if x else -1 for x in df['change']])
-    df['omissions']  = np.array([1 if x else 0 for x in df['omitted']])
-    df['omissions1'] = np.array([x for x in np.concatenate([[0], 
-                        df['omissions'].values[0:-1]])])
+    df['omissions']  = np.array([1 if x else 0 for x in df['omitted']]) # omission
+    df['omissions1'] = np.array([x for x in np.concatenate([[0], # shift omission 
+                        df['omissions'].values[0:-1]])]) 
 
     # Build timing strategy using average timing parameters
     df['timing1D']          = np.array(\
@@ -353,6 +356,7 @@ def format_session(session,stimulus_presentations, format_options):
         min_timing_val = 0
     else:
         min_timing_val = -1
+
     # df['timing1'] =  np.array([1 if x else min_timing_val 
     #     for x in df['images_since_last_lick'].shift() ==0])
     # df['timing2'] =  np.array([1 if x else min_timing_val 
@@ -401,7 +405,7 @@ def format_session(session,stimulus_presentations, format_options):
                 'late_task0':df['late_task0'].values[:,np.newaxis]} 
    
     # Mean Center the regressors should you need to 
-    if format_options['mean_center']:
+    if format_options['mean_center']: # not sure why when we have categorical?
         for key in inputDict.keys():
             # mean center
             inputDict[key] = inputDict[key] - np.mean(inputDict[key])

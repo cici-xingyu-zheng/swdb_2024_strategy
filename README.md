@@ -65,21 +65,40 @@ Note that both repos use some internal/local load paths that are a bit hard to p
 4. ways to get behaviral data direction without getting ecepyhs session? 
 5. any ways to change file write permission? 
 6. go through in more detail `psytrack`'s usage
+7. plot inter lick interval as well!!! 
 
 ### 08/26/24
 Fixed the directly loading behaviral session issue;
 Michael and Saskia said they don't recommending re-writing the attribute, and some files are fetched (?) which is fair;
 
-#### General qestions: 
+Will use compare cross-validated log-likelihood to compare across models;
+
+1. read the psytrack paper [done];
+2. method and notebook read the Roy 2018a NeurIPS paper;
+3. bout definition, inter-bout-interval;
+4. email 
+
+Visualize design matrix, for some frames in the example session:
+![Xy](plots/explore/design_mat.png) 
+
+
+#### Set of metrics to look at for learning dynamics:
+
+***
+
+### General qestions: 
 1. why we see `> 5` consecutive aborted trails? 
+
 _Answer (from Marina):_  that is very likely; as the 5 trials specify the fixed number of frames, but after 5, same image will still be flashed 
-![aborted](plots/explore/aborted_entire_session.pdf) 
+![aborted](plots/explore/aborted_entire_session.png) 
 
 2. is start of trail right after the change, or right after 3 sec grace period if hit trial?
-![example trial](plots/explore/example_session_period.pdf)
+
+![example trial](plots/explore/example_session_period.png)
 _Answer (from Marina):_ no matter hit or miss, the mice will get a 4-flashes grace period; then the draw specify the # of frames from:
 ![the geometric dist](https://allenswdb.github.io/_images/change_time_trial_types.png)
 
 3. clarification from Marina about the logic behind the timing strategy:
+
 It more like serving the minimum wait time the mouse is oaky to bear, against it's lick urge, as 4 frames is the most frequent and also the least amount of time its willing to bear.
 

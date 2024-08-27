@@ -131,3 +131,4 @@ Every row corresponds to one trial of the change detection task. Here is a quick
 First, licks were segmented into licking bouts based on an inter-lick interval of 700 ms (Figure S2A). The duration of bouts was largely governed by whether the mouse received and then consumed a water reward (Figure S2B). Therefore, we focused our analysis on predicting the start of each bout. Bout onsets were time- locked to image presentations, thus for each bout we identified the last image or omission presented before the bout started (Figure S2C). Because our model predicts the start of bouts, we ignore images when the mouse was already in a bout.
 
 __Choice of 700 ms__: Bimodal histogram of interval between successive licks (n = 936,136 licks from 382 imaging sessions). Dashed line indicates 700 ms threshold used to separate licks within the same licking bout (< 700ms) and licks in separate licking bout (> 700 ms).
+
