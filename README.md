@@ -86,15 +86,24 @@ Actually it's pretty smart; maybe it's just my first time seeing this time diff 
 
 After getting wMAP, updated hyperparams by Laplace approximation, and then update log-evidence.
   
-
-1. read the psytrack paper [done];
-2. method and notebook read the Roy 2018a NeurIPS paper [first pass, read the function docs];
-3. bout definition, inter-bout-interval;
-4. email 
-
+(Back to logging)
+- I read the psytrack Roy 2021 paper, method and notebook, read the Roy 2018a NeurIPS paper [first pass, read the function docs];
+- Went through the bout definition, plot inter-bout-interval; now I decide to focus on the `wt/wt` mice, plot their licks during H session.
 
 Visualize design matrix, for some frames in the example session:
 ![Xy](plots/explore/design_mat.png) 
+
+
+**TO-DOs:**
+1. How to tease apart?
+    - ICI for only: after a bout-ish lick! 
+    - ICI for only: after the first abortion lick!
+2. Compare model evidence
+3. Plot sessions before 
+
+### 08/27/24
+__Information from Andrew__: for `false alarm` trials, trials actualy continues! Licks would lead to no reward, and next one will be another drawn! I was SO WRONG about it
+
 
 
 
