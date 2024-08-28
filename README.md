@@ -117,7 +117,7 @@ if included in ecephys:
 
 I fetched all `wt/wt` from `allensdk` following [totorial 1](https://allensdk.readthedocs.io/en/latest/visual_behavior_optical_physiology.html#tutorials) here.
 
-Start migrating the code (to `src_local`) the meantime when my data is loading ... est: in 3 hrs, so by dinner, I will be setting up the system for bigger scale work.
+Start migrating the code (to `src_local`) the meantime when my data is loading ... est: in 3-6 hrs, so by tmrw morning, I will be setting up the system for bigger scale work.
 
 For `psytrack`: Turn out that output `y` must be either [1 or 2](https://github.com/nicholas-roy/psytrack/blob/master/psytrack/getMAP.py) or if 0 or 1 will be fixed; don't know why but fine
 
@@ -126,11 +126,16 @@ For `psytrack`: Turn out that output `y` must be either [1 or 2](https://github.
 
 #### Illustration for timing strategy
 ![sigmoidal](/plots/graphics/timing_all.png)
-Realized that on Sunday I plug in `a` and `b` in the opposite way..!
+
+(Realized that on Sunday I plug in `a` and `b` in the opposite way; fixed it now.)
+
+
 $$y(t)=y_{\min }+\frac{y_{\max }-y_{\min }}{1+(t / a)^b}$$
 
 
 #### More thoughts about colinearity of strategies:
+
+For the omitted and post-ommited: the ith of `omitted` and i+1 ith of `post-omitted` will do the eact same to y with one time offset.
 
 ***
 
@@ -149,4 +154,6 @@ _Answer (from Marina):_ no matter hit or miss, the mice will get a 4-flashes gra
 3. clarification from Marina about the logic behind the timing strategy:
 
 It more like serving the minimum wait time the mouse is oaky to bear, against it's lick urge, as 4 frames is the most frequent and also the least amount of time its willing to bear.
+
+4. are the `G` and `H` sessions consecutive?
 
