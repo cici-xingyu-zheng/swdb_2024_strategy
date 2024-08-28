@@ -88,22 +88,41 @@ After getting wMAP, updated hyperparams by Laplace approximation, and then updat
   
 (Back to logging)
 - I read the psytrack Roy 2021 paper, method and notebook, read the Roy 2018a NeurIPS paper [first pass, read the function docs];
-- Went through the bout definition, plot inter-bout-interval; now I decide to focus on the `wt/wt` mice, plot their licks during H session.
+- Went through the bout definition, plot inter-bout-interval; now I decide to focus on the `wt/wt` mice, plot their licks during H session. (_Correction:_ realize that I plotted for every one before I kill the kernel! so can continue to do it... and bin it...)
 
 Visualize design matrix, for some frames in the example session:
 ![Xy](plots/explore/design_mat.png) 
 
 
-**TO-DOs:**
-1. How to tease apart?
-    - ICI for only: after a bout-ish lick! 
-    - ICI for only: after the first abortion lick!
+#### TO-DOs:
+1. How to tease different senario's licks apart?
+    - ICI for only after a bout-ish lick! is it 4-5 flashes you'll wait for? will we see a shift?
+    - ICI for only after the first abortion lick! will that be substentially longer?
+    - plot distribution plot but not 
 2. Compare model evidence
-3. Plot sessions before 
+3. Email Alex
 
 ### 08/27/24
-__Information from Andrew__: for `false alarm` trials, trials actualy continues! Licks would lead to no reward, and next one will be another drawn! I was SO WRONG about it
 
+__Information from Andrew__: for `false alarm` trials, trials actualy continues but not early stopped! Licks would lead to no reward, and next one will be another drawn! I was very wrong about it
+
+__Information from Yoni__: the hard drive DOES NOT contain: behavior session not realted to Ecephys! so for scale up plot I would need to use a capsule; or download it from S3.
+
+```
+if stand alone behavior:
+    - go fetch it; 
+if included in ecephys:
+    - load it from the ecephys session
+```
+
+I fetched all `wt/wt` from `allensdk` following [totorial 1](https://allensdk.readthedocs.io/en/latest/visual_behavior_optical_physiology.html#tutorials) here.
+
+Start migrating the code (to `src_local`) the meantime when my data is loading ... est: in 3 hrs, so by dinner, I will be setting up the system for bigger scale work.
+
+Turn out that input must be either [1 or 2](https://github.com/nicholas-roy/psytrack/blob/master/psytrack/getMAP.py) or if 0 or 1 will be fixed; don't know why but fine
+
+#### Some illustration for annotations (Alex's):
+![anno](/plots/graphics/annot.png)
 
 
 
