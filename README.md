@@ -125,8 +125,9 @@ For `psytrack`: Turn out that output `y` must be either [1 or 2](https://github.
 ![anno](/plots/graphics/annot.png)
 
 #### Illustration for timing strategy
-![anno](/plots/graphics/timing_all.png)
+![sigmoidal](/plots/graphics/timing_all.png)
 Realized that on Sunday I plug in `a` and `b` in the opposite way..!
+$$y(t)=y_{\min }+\frac{y_{\max }-y_{\min }}{1+(t / a)^b}$$
 
 
 #### More thoughts about colinearity of strategies:
