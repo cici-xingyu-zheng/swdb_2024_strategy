@@ -119,12 +119,17 @@ I fetched all `wt/wt` from `allensdk` following [totorial 1](https://allensdk.re
 
 Start migrating the code (to `src_local`) the meantime when my data is loading ... est: in 3 hrs, so by dinner, I will be setting up the system for bigger scale work.
 
-Turn out that input must be either [1 or 2](https://github.com/nicholas-roy/psytrack/blob/master/psytrack/getMAP.py) or if 0 or 1 will be fixed; don't know why but fine
+For `psytrack`: Turn out that output `y` must be either [1 or 2](https://github.com/nicholas-roy/psytrack/blob/master/psytrack/getMAP.py) or if 0 or 1 will be fixed; don't know why but fine
 
-#### Some illustration for annotations (Alex's):
+#### Illustration for lick bouts:
 ![anno](/plots/graphics/annot.png)
 
+#### Illustration for timing strategy
+![anno](/plots/graphics/timing_all.png)
+Realized that on Sunday I plug in `a` and `b` in the opposite way..!
 
+
+#### More thoughts about colinearity of strategies:
 
 ***
 
