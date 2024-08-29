@@ -26,3 +26,20 @@ In order to estimate the extent to which our recovered weights wMAP are constrai
 $A = diag(H^{-1})$ (S1)
 
 Using the diagonal of the inverse Hessian, we can take pA to estimate a one standard deviation interval on either side of each weight on every trial. By using two standard deviations, we approximate the 95% posterior credible interval shown throughout the paper.
+
+
+(from Piet 2024)
+
+## "Strategy Index":
+
+__Visual index__: The absolute value of the percentage change in model evidence after removing the visual strategy
+__Timing index__: The absolute value of the percentage change in model evidence after removing the timing strategy
+
+The __strategy index__ is then defined as the difference between the visual index and the timing index:
+
+Strategy index = Visual index - Timing index
+
+A positive strategy index indicates the session was better described by the visual strategy, while a negative strategy index indicates the session was better described by the timing strategy.
+
+## AUROC:
+Forgot how exactly this is calculated; will come back to this.

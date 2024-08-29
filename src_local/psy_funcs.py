@@ -1,8 +1,10 @@
 import numpy as np
 import psytrack as psy
 import matplotlib.pyplot as plt
-import src_local.utils as utils
+from sklearn import metrics
 import copy
+
+import src_local.utils as utils
 
 from psytrack.helper.crossValidation import split_data
 from psytrack.helper.crossValidation import xval_loglike
@@ -261,3 +263,27 @@ def compute_cross_validation_ypred(psydata,test_results,ypred):
     full_pred = copy.copy(ypred)
     full_pred[np.where(xval_mask==True)[0]] = cv_pred
     return full_pred
+
+
+def compute_model_roc(y,pred,plot_this=False,cross_validation=True):
+    '''
+        Computes area under the ROC curve for the model in fit. 
+        
+        plot_this (bool), plots the ROC curve. 
+        cross_validation (bool)
+            if True uses the cross validated prediction in fit
+            if False uses the training fit
+
+    '''
+
+    data = y-1
+    model = pred
+
+    if plot_this:
+        plt.figure()
+        alarms,hits,thresholds = metrics.roc_curve(data,model)
+        plt.plot(alarms,hits,'r--')
+        plt.plot([0,1],[0,1],'k--')
+        plt.ylabel('Hits')
+        plt.xlabel('False Alarms')
+    return metrics.roc_auc_score(data,model)

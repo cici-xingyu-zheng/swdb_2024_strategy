@@ -20,3 +20,8 @@ def truncated_geometric_prob(k, p = .25, start=5, end=11):
     unnormalized = p * (1-p)**(k-start)
     normalization = sum(p * (1-p)**(i-start) for i in range(start, end+1))
     return unnormalized / normalization
+
+def calculate_index(full_evidence, reduced_evidence):
+    percent_change = (reduced_evidence - full_evidence) / full_evidence
+    return np.abs(percent_change) * 100  # Convert to percentage
+

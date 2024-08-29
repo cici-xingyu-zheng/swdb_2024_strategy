@@ -165,6 +165,7 @@ def annotate_licks(licks, behavior_session):
     # Get the total number of bouts
     num_bouts = licks['bout_number'].max()
 
+
     # Check if the number of bout starts equals the number of bout ends
     assert num_bout_start==num_bout_end, "Bout Starts and Bout Ends don't align"
 
@@ -298,6 +299,17 @@ def annotate_bouts(licks, stimulus_presentations):
 
     # if this presentation is within, inclusively, a lick bout:
     stimulus_presentations['licked'] = stimulus_presentations['bout_start'] | stimulus_presentations['bout_end'] | stimulus_presentations['in_lick_bout']
+
+    stimulus_presentations['hits']   =  \
+        stimulus_presentations['licked'] & \
+        stimulus_presentations['is_change']
+    stimulus_presentations['misses'] = \
+        ~stimulus_presentations['licked'] & \
+        stimulus_presentations['is_change']
+    stimulus_presentations['aborts'] =  \
+        stimulus_presentations['licked'] & \
+        ~stimulus_presentations['is_change']
+
 
     # Quality Control checks
     # Count total number of bout starts in stimulus_presentations
