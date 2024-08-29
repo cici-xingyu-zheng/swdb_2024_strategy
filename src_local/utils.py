@@ -8,3 +8,15 @@ def moving_mean(values, window,mode='valid'):
     weights = np.repeat(1.0, window)/window
     mm = np.convolve(values, weights, mode)
     return mm
+
+def truncated_geometric_prob(k, p = .25, start=5, end=11):
+    '''
+        The true image transition probability 
+        (ignoring the recurrence from the sham change...)
+    '''
+    if k < start or k > end:
+        return 0
+    
+    unnormalized = p * (1-p)**(k-start)
+    normalization = sum(p * (1-p)**(i-start) for i in range(start, end+1))
+    return unnormalized / normalization

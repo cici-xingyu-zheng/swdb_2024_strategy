@@ -137,6 +137,33 @@ $$y(t)=y_{\min }+\frac{y_{\max }-y_{\min }}{1+(t / a)^b}$$
 
 For the omitted and post-ommited: the ith of `omitted` and i+1 ith of `post-omitted` will do the eact same to y with one time offset.
 
+### 08/28/24
+
+Met with group, today I'll aim to produce the indices for all sessions once session downloads well; if capable of this overnight (it's quick using just the total model fit, which Alex used for his).
+
+Other than that, interesting things to look into:
+
+
+#### TO-DO:
+
+1. write ROC code;
+2. model comparison sturcture (lesion);
+3. different timing strategy comparison;
+
+
+#### Notes from meeting with Alex:
+1. yes difference in different categorial coding doesn't matter too much;
+
+2. see Supp. Figure 3 for the timing strategy build up;
+
+3. 1) Are mice more likely to revert to the timing strategy after a rewarded lick?
+    - He suspects this is true. It certainly looks like this happens, but I never quantified it. I think the dynamic weights of the model should capture this effect. One way to quantify it would be to look at the reward-triggered change in the timing strategy weights. We might need to compare that to a shuffle, or unrewarded lick bout. 
+3. 2) Are mice less likely to use timing-based licks after an aborted trial, once they understand the punishment?
+    - Its possible, but the punishment for the aborted trial is small, mostly a restarting of the trial. We could try to quantify it. 
+
+4. Use AUROC for goodness of fit; and use evidence to compare bethween.
+
+
 ***
 
 ### General qestions: 
@@ -155,5 +182,6 @@ _Answer (from Marina):_ no matter hit or miss, the mice will get a 4-flashes gra
 
 It more like serving the minimum wait time the mouse is oaky to bear, against it's lick urge, as 4 frames is the most frequent and also the least amount of time its willing to bear.
 
-4. are the `G` and `H` sessions consecutive?
+4. are the `G` and `H` sessions consecutive on the same day?
+_Answer (from Marina):_ yes..? Another thing is that even within the session, there is active behavior period, reward and passive replay period.
 
