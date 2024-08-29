@@ -139,13 +139,15 @@ For the omitted and post-ommited: the ith of `omitted` and i+1 ith of `post-omit
 
 ### 08/28/24
 
-Met with group, today I'll aim to produce the indices for all sessions once session downloads well; if capable of this overnight (it's quick using just the total model fit, which Alex used for his).
+Met with group, today I'll aim to produce the indices for all sessions once session downloads well; if capable of this overnight (it's quicker using just the total model fit, which Alex used for his).
 
-Other than that, interesting things to look into:
+- All behavior only mouse downloaded! 
+- I just defined the pure timing strategy based on the ideal geometric distribution, so can use that as well and compare with the `timing1D` distribution.
+- Both method working now, added some visualization;
 
 
 #### TO-DO:
-
+0. how to load different sessions;
 1. write ROC code;
 2. model comparison sturcture (lesion);
 3. different timing strategy comparison;
@@ -162,6 +164,8 @@ Other than that, interesting things to look into:
     - Its possible, but the punishment for the aborted trial is small, mostly a restarting of the trial. We could try to quantify it. 
 
 4. Use AUROC for goodness of fit; and use evidence to compare bethween.
+
+Others: Supplementary Figure 7 has quiet a lot of interesting things to look at.
 
 
 ***

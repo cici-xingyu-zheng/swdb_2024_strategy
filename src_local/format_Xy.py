@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import copy
 import matplotlib.pyplot as plt
-
-from src_local.utils import utils
+import seaborn as sns
+import src_local.utils as utils
 
 def build_regressor(stim_table, format_options, behavior_session):
     # Define columns of interest from the stimulus_presentations DataFrame
@@ -19,8 +19,8 @@ def build_regressor(stim_table, format_options, behavior_session):
 
     # Process behavior annotations:
 
-    # Create 'y' column: 2 if bout_start, 1 otherwise (target variable for prediction)
-    df['y'] = np.array([2 if x else 1 for x in 
+    # Create 'y' column: 1 if bout_start, 0 otherwise (target variable for prediction)
+    df['y'] = np.array([1 if x else 0 for x in 
         stim_table.bout_start.values]) # predict bout start
 
     # Calculate the **number** of images since the last lick
@@ -33,8 +33,17 @@ def build_regressor(stim_table, format_options, behavior_session):
 
     # Build Strategy regressors:
 
-    # Create various encodings for the 'change' variable
-    df['task']      = np.array([1 if x else 0 for x in df['change']]) 
+    # # Create various encodings for the 'change' variable
+    # temp_series = pd.Series(df.change.values)
+    # # Use rolling window to mark 1 for True and 4 frames after
+    # window_size = 5  # 1 for the True value itself, and 4 more after
+    # rolled = temp_series.rolling(window=window_size, min_periods=1).sum()
+
+    # # Create the 'y' column: 1 if bout_start or within 3 frames after, 0 otherwise
+    # df['task'] = np.where(rolled > 0, 1, 0)
+
+    df['task'] = np.array([1 if x else 0 for x in 
+            df.change.values]) 
     # Create encodings for omissions
     df['omissions']  = np.array([1 if x else 0 for x in df['omitted']]) # omission
     df['omissions1'] = np.array([x for x in np.concatenate([[0], # shift omission 
@@ -52,28 +61,23 @@ def build_regressor(stim_table, format_options, behavior_session):
 
     # Create 'included' column: True if not in a lick bout
     df['included'] = ~df['in_lick_bout']
-
-    strategy_list = ['task','timing1D', 'timingGeom', 'omissions','omissions1','bias']
-
     # Make a copy before trimming data
     full_df = copy.copy(df) 
     # Segment out consumption trials
     df = df[df['included']] # this excusion is becaouse the 'in_lick_bout' state has only to do with consumption
     # Numer of trails that we leave out:
     df['missing_trials'] = np.concatenate([np.diff(df.index)-1,[0]])
-    
-    # Create Feature matrix for visualization
-    X = df[strategy_list].to_numpy().T
-    y = df['bout_start'].to_numpy()
 
+    # Create the psydata dict object:
     inputDict ={'task': df['task'].values[:,np.newaxis],
             'omissions' : df['omissions'].values[:,np.newaxis],
             'omissions1' : df['omissions1'].values[:,np.newaxis],
             'timing1D': df['timing1D'].values[:,np.newaxis],
+            'timingGeom': df['timingGeom'].values[:,np.newaxis],
             'bias':  df['bias'].values[:,np.newaxis]}
     
     # Normalize or centering features
-    inputDict = normalize_features(inputDict, format_options['preprocess'])
+    # inputDict = normalize_features(inputDict, format_options['preprocess'])
 
     # Pack up data into format for psytrack
     psydata = { 'y': df['y'].values, 
@@ -88,7 +92,7 @@ def build_regressor(stim_table, format_options, behavior_session):
 
     psydata['session_label'] = [behavior_session.metadata['session_type']]
     
-    return psydata, X, y
+    return psydata
     
 def timing_sigmoid(x, params, min_val=0, max_val=1, tol=1e-3):
     '''
@@ -157,9 +161,16 @@ def normalize_features(inputDict, format_options_preprocess):
 
     return inputDict
 
-def visualize_design(X, y):
-    
+def visualize_design(df, strategy_list, save_name, t_start = 300):
 
+    '''
+    Note that we are visualizing a not normalized or centered, 
+    nor within bout excluded 
+    '''
+    X = df[strategy_list].to_numpy().T
+    y = df['y'].to_numpy()
+    X = X[:, t_start:t_start+200]
+    y = y[t_start:t_start+200]
     # Set up the figure and axes
     fig, (ax1, ax2) = plt.subplots(nrows=2, ncols=1, figsize=(12, 6), 
                                 gridspec_kw={'height_ratios': [4, 1]}, sharex=True)
@@ -178,11 +189,11 @@ def visualize_design(X, y):
 
     # Plot 1D heatmap for y
     sns.heatmap(y.reshape(1, -1), ax=ax2, cmap='viridis', cbar=False, norm=norm)
-    ax2.set_title('lick start y', fontsize = 16)
+    ax2.set_title('Lick start y', fontsize = 16)
     ax2.set_xlabel('Frame', fontsize = 14)
     ax2.set_yticks([])
     ax2.set_xticks(list(range(0, 200, 50)))
-    ax2.set_xticklabels(list(range(300, 500, 50)), rotation = 0)
+    ax2.set_xticklabels(list(range(t_start, t_start+200, 50)), rotation = 0)
 
     # Add a colorbar to the right of the figure
     cbar_ax = fig.add_axes([0.92, 0.15, 0.02, 0.7])
@@ -191,4 +202,7 @@ def visualize_design(X, y):
     # Adjust layout and display
     plt.tight_layout(rect=[0, 0, 0.9, 1])
     plt.show()
+
+    fig.savefig(f'{save_name}.pdf')
+    plt.close(fig)
 

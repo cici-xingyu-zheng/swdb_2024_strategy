@@ -9,13 +9,14 @@ from psytrack.helper.crossValidation import xval_loglike
 
 colors = {
         'bias':'dimgray',
-        'omissions':'tab:green',
-        'omissions1':'magenta',
-        'task':'darkorange',
-        'timing1D':'blue',
+        'omissions':'forestgreen',
+        'omissions1':'orchid',
+        'task':'tomato',
+        'timing1D':'royalblue',
+        'timingGeom':'teal'
         }
 
-def fit_weights(psydata, strategies, fit_overnight=False):
+def fit_weights(psydata, strategy_list, fit_overnight=False):
     '''
         does weight and hyper-parameter optimization on the data in psydata
         Args: 
@@ -36,7 +37,7 @@ def fit_weights(psydata, strategies, fit_overnight=False):
     '''
     # Set up number of regressors
     weights = {}
-    for strat in strategies:
+    for strat in strategy_list:
         weights[strat] = 1
     print(weights)
     K = np.sum([weights[i] for i in weights.keys()])
