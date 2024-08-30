@@ -169,6 +169,15 @@ Met with group, today I'll aim to produce the indices for all sessions once sess
 Others: Supplementary Figure 7 has quiet a lot of interesting things to look at.
 
 
+### 08/29/31
+Will need to figure out the singular matrix issue;
+
+What to grab: 
+- within a session: 
+    - for the changed:
+        - define a score: w_timing/w_visual
+
+
 ***
 
 ### General qestions: 
