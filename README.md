@@ -122,7 +122,7 @@ Start migrating the code (to `src_local`) the meantime when my data is loading .
 For `psytrack`: Turn out that output `y` must be either [1 or 2](https://github.com/nicholas-roy/psytrack/blob/master/psytrack/getMAP.py) or if 0 or 1 will be fixed; don't know why but fine
 
 #### Illustration for lick bouts:
-![anno](/plots/graphics/annot.png)
+![anno](/plots/graphics/lick_bout.png)
 
 #### Illustration for timing strategy
 ![sigmoidal](/plots/graphics/timing_all.png)
@@ -168,15 +168,19 @@ Met with group, today I'll aim to produce the indices for all sessions once sess
 
 Others: Supplementary Figure 7 has quiet a lot of interesting things to look at.
 
+![modelfit](/plots/graphics/ephys_fit.png)
 
 ### 08/29/31
-Will need to figure out the singular matrix issue;
+Will need to figure out the singular matrix issue but no we simply ignored a session in `TRAINNING_4`;
 
-What to grab: 
+#### The attempt to get within session strategy info for each frame:     
+
 - within a session: 
     - for the changed:
-        - define a score: w_timing/w_visual
+        - define a score: w_timing-w_visual;
+        - bin the changed frames by that -- see if there are different 
 
+- I will subset those successful licks, and look right after weight chnage
 
 ***
 
