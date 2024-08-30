@@ -181,6 +181,8 @@ Will need to figure out the singular matrix issue but no we simply ignored a ses
         - bin the changed frames by that -- see if there are different 
 
 - I will subset those successful licks, and look right after weight chnage
+- AUC, lick statistics
+- time maybe
 
 ***
 
