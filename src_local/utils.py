@@ -1,5 +1,7 @@
 import numpy as np
 
+# Helper functions.
+
 def moving_mean(values, window,mode='valid'):
     '''
         Computes the moving mean of the series in values, with a square window 
@@ -11,7 +13,7 @@ def moving_mean(values, window,mode='valid'):
 
 def truncated_geometric_prob(k, p = .25, start=5, end=11):
     '''
-        The true image transition probability 
+        The true image transition probability;
         (ignoring the recurrence from the sham change...)
     '''
     if k < start or k > end:

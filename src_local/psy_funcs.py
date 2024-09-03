@@ -9,6 +9,7 @@ import src_local.utils as utils
 from psytrack.helper.crossValidation import split_data
 from psytrack.helper.crossValidation import xval_loglike
 
+# Used in the presentation.
 colors = {
         'bias':'dimgray',
         'omissions':'tan',
@@ -16,7 +17,7 @@ colors = {
         'task':'teal',
         'timing1D':'tomato',
         # 'timingGeom':'teal'
-        }
+        } 
 
 # colors = {
 #         'bias':'dimgray',

@@ -188,12 +188,37 @@ Will need to figure out the singular matrix issue but no we simply ignored a ses
 
 ### 08/30/24
 
-- Geom model and 1D model by Alex correlates very well in their strategy index preferences. 
+- Geom model and 1D model by Alex correlates very well in their strategy index preferences (R = .87). 
 - Realize that I might need to rerun the training5 data... as I didn't save test metric till the very end :/ and the saved contains some repeats? But maybe still usable..? But I am now trying to detect truncated files and replace them with good ones.
 - **talking to TA Virgil**: 
     - rythmic running speed changes for different strategy mice
-    - generalist and specialist mouse: variability -- might be predicted by pupil diameter their arosal state
+    - generalist and specialist mouse: variability -- for generalist their performance might be predicted by pupil diameter/their arosal state?
 
+
+### 09/03/24
+
+#### Summary of the findings:
+
+**Training History**
+
+1. The more visual mice have undergone more sessions of training than the timing mice.
+2. A behavioral predictor for timing strategy is that they slow down more, and they started slowing down way before the licking event (some credits go to Vergil!)
+
+**Neural Correlates**
+3. There is differential feedforward and feedback interactions between VisP and 4 higher visual areas when the mice is using different strategies during licks (esp. area am).
+    - Method paper: [Semedo et al 2022](https://www.nature.com/articles/s41467-022-28552-w)
+    - Potential related mechanism: [Sit & Goard, 2020](https://www.nature.com/articles/s41467-020-17283-5)
+
+A tiny bit of post workshop wrap up. 
+
+Finish inference to get strategy index for other stages with the images as the singal (`TRAINING 3`, `TRAINING 4`, `TRAINING 5`)
+
+- get their max d-prime, but I don't know how comparable they will be with Ecephys's inference, as the model's different (without omission) and the reward's a bit different;
+- Training 4 [done]
+- Training 5 []
+- Training 3 []
+
+The perplexing thing for me still, is that, if their strategy index stays consistent, it means that before it was ready, it must have more training - but that would mean that their d-prime was low, or not consistent, even they are using the right strategy. But how could that be possible?
 
 
 
