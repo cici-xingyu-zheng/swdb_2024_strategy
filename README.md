@@ -170,7 +170,7 @@ Others: Supplementary Figure 7 has quiet a lot of interesting things to look at.
 
 ![modelfit](/plots/graphics/ephys_fit.png)
 
-### 08/29/31
+### 08/29/24
 Will need to figure out the singular matrix issue but no we simply ignored a session in `TRAINNING_4`;
 
 #### The attempt to get within session strategy info for each frame:     
@@ -180,9 +180,22 @@ Will need to figure out the singular matrix issue but no we simply ignored a ses
         - define a score: w_timing-w_visual;
         - bin the changed frames by that -- see if there are different 
 
-- I will subset those successful licks, and look right after weight chnage
-- AUC, lick statistics
-- time maybe
+#### TO-DOs:
+- I will subset licks with reward, and look right after weight chnage -- like in Spike-triggered Average (STA); 
+- AUC [done]; 
+- lick statistics to motivate timing - your own way to set it up?
+    - get all licks after filtering 700s.
+
+### 08/30/24
+
+- Geom model and 1D model by Alex correlates very well in their strategy index preferences. 
+- Realize that I might need to rerun the training5 data... as I didn't save test metric till the very end :/ and the saved contains some repeats? But maybe still usable..? But I am now trying to detect truncated files and replace them with good ones.
+- **talking to TA Virgil**: 
+    - rythmic running speed changes for different strategy mice
+    - generalist and specialist mouse: variability -- might be predicted by pupil diameter their arosal state
+
+
+
 
 ***
 

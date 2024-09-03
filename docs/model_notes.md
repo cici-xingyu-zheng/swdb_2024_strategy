@@ -42,4 +42,20 @@ Strategy index = Visual index - Timing index
 A positive strategy index indicates the session was better described by the visual strategy, while a negative strategy index indicates the session was better described by the timing strategy.
 
 ## AUROC:
-Forgot how exactly this is calculated; will come back to this.
+ROC curve plots the True Positive Rate (TPR) against the False Positive Rate (FPR) at various threshold settings.
+
+To calculate AUROC:
+1. Sort the predictions in descending order along with their true labels.
+
+2. Calculate TPR and FPR for each threshold (each unique prediction value).
+
+3. Plot these points (FPR, TPR).
+
+4. Calculate the area under this curve, often using the trapezoidal rule.
+TPR = True Positives / (True Positives + False Negatives)
+FPR = False Positives / (False Positives + True Negatives)
+AUROC ranges from 0 to 1, where:
+
+- 0.5 represents random guessing
+- 1.0 represents perfect classification
+- < 0.5 represents worse than random guessing.

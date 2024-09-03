@@ -11,12 +11,22 @@ from psytrack.helper.crossValidation import xval_loglike
 
 colors = {
         'bias':'dimgray',
-        'omissions':'forestgreen',
-        'omissions1':'orchid',
-        'task':'tomato',
-        'timing1D':'royalblue',
-        'timingGeom':'teal'
+        'omissions':'tan',
+        'omissions1':'thistle',
+        'task':'teal',
+        'timing1D':'tomato',
+        # 'timingGeom':'teal'
         }
+
+# colors = {
+#         'bias':'dimgray',
+#         'omissions':'forestgreen',
+#         'omissions1':'orchid',
+#         'task':'tomato',
+#         'timing1D':'royalblue',
+#         'timingGeom':'teal'
+#         }
+
 
 def fit_weights(psydata, strategy_list, fit_overnight=False):
     '''
