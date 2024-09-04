@@ -219,8 +219,8 @@ Finish inference to get strategy index for other stages with the images as the s
 
 - get their max d-prime, but I don't know how comparable they will be with Ecephys's inference, as the model's different (without omission) and the reward's a bit different;
 - Training 4 [done]
-- Training 5 []
-- Training 3 []
+- Training 5 [done] for all types, `lapsed`, `ready` and `epilogue`.
+- Training 3 [done]
 
 The perplexing thing for me still, is that, if their strategy index stays consistent, it means that before it was ready, it must have more training - but that would mean that their d-prime was low, or not consistent, even they are using the optimial strategy. But how could that be possible? Are those mice have longer period of disengagement?
 
