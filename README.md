@@ -40,7 +40,7 @@ Note that both repos use some internal/local load paths that are a bit hard to p
 | Time | Event |
 |------|-------|
 | Saturday Aug 24 10:00 – 12:00 | Project proposal presentations |
-| Saturday Aug 21 9:00 – 12:00 | Project presentations |
+| Saturday Sep 1 9:00 – 12:00 | Project presentations |
 
 ***
 ## Log of progress
@@ -194,6 +194,8 @@ Will need to figure out the singular matrix issue but no we simply ignored a ses
     - rythmic running speed changes for different strategy mice
     - generalist and specialist mouse: variability -- for generalist their performance might be predicted by pupil diameter/their arosal state?
 
+- Alex's own fitting for the NP data: [Figures and others](https://drive.google.com/drive/folders/1UXPUp9YiNcxm55TIEZjMntz5W6VMwzJ_?usp=drive_link)
+
 
 ### 09/03/24
 
@@ -206,7 +208,9 @@ Will need to figure out the singular matrix issue but no we simply ignored a ses
 
 **Neural Correlates**
 3. There is differential feedforward and feedback interactions between VisP and 4 higher visual areas when the mice is using different strategies during licks (esp. area am).
-    - Method paper: [Semedo et al 2022](https://www.nature.com/articles/s41467-022-28552-w)
+
+    - The CCA method paper used: [Semedo et al 2022](https://www.nature.com/articles/s41467-022-28552-w)
+
     - Potential related mechanism: [Sit & Goard, 2020](https://www.nature.com/articles/s41467-020-17283-5)
 
 A tiny bit of post workshop wrap up. 
@@ -218,9 +222,11 @@ Finish inference to get strategy index for other stages with the images as the s
 - Training 5 []
 - Training 3 []
 
-The perplexing thing for me still, is that, if their strategy index stays consistent, it means that before it was ready, it must have more training - but that would mean that their d-prime was low, or not consistent, even they are using the right strategy. But how could that be possible?
+The perplexing thing for me still, is that, if their strategy index stays consistent, it means that before it was ready, it must have more training - but that would mean that their d-prime was low, or not consistent, even they are using the optimial strategy. But how could that be possible? Are those mice have longer period of disengagement?
 
-
+- how to figure this out?
+    1. plot the index by animal, to see if the same trend still holds, and color them by session;
+    2. plot the number of sessions each of the 27 animals.
 
 ***
 
