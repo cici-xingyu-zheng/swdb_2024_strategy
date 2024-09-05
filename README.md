@@ -228,6 +228,11 @@ The perplexing thing for me still, is that, if their strategy index stays consis
     1. plot the index by animal, to see if the same trend still holds, and color them by session;
     2. plot the number of sessions each of the 27 animals.
 
+### 09/04/24
+
+My current hypothesis becomes: before, it was that smart mouse go through sessions faster; that there is a negative correlation between index and sesion number, but later, it is the exact opposite!
+
+
 ***
 
 ### General qestions: 
