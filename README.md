@@ -234,6 +234,8 @@ My current hypothesis becomes: before, it was that smart mouse go through sessio
 
 ### 09/05/24
 
+Findings related to training history and strategy preferece:
+
 ![fig1](/plots/figs/figs.001.png)
 ![fig2](/plots/figs/figs.002.png)
 ![fig3](/plots/figs/figs.003.png)
