@@ -232,6 +232,11 @@ The perplexing thing for me still, is that, if their strategy index stays consis
 
 My current hypothesis becomes: before, it was that smart mouse go through sessions faster; that there is a negative correlation between index and sesion number, but later, it is the exact opposite!
 
+### 09/05/24
+
+![fig1](/plots/figs/figs.001.png)
+![fig2](/plots/figs/figs.002.png)
+![fig3](/plots/figs/figs.003.png)
 
 ***
 
