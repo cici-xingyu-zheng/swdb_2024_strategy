@@ -11,7 +11,7 @@ cache = VisualBehaviorNeuropixelsProjectCache.from_s3_cache(cache_dir=output_dir
 
 behavior_sessions = cache.get_behavior_session_table()
 
-sub_sessions = [1061722976]
+sub_sessions = [1080354325]
 
 print('Num wt mouse sessions:', len(sub_sessions))
 
