@@ -1,0 +1,697 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Licking Strategy Report</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ee4418d0-4484-4311-90f6-b9a9d21c8836" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/rijksmuseum_jansz_1649.jpg" style="object-position:center 70%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">✏️</span></div><h1 class="page-title">Licking Strategy Report</h1><p class="page-description"></p></header><div class="page-body"><p id="951b6e0d-3f2d-4485-8002-d889afe968d0" class="">CiCi Zheng, 09/09/24, SWDB Workshop Report</p><h2 id="a78e3cd1-b8ac-44ee-9b71-9a336f930df0" class=""><strong>Introduction and background</strong></h2><p id="23535b30-d116-4053-af32-4e0b31021fa2" class="">
+</p><p id="61f7d1f3-a074-4e3b-b9f6-1f278f60e466" class="">This project is built on the work by Piet et al., where the authors characterize the behavioral strategies used by mice during the visual change detection task in the Allen Visual Behavior 2P dataset. By fitting the initiation of lick bouts via a dynamic logistic regression model, two strategies were found to contribute substantially to the model-fit, namely the visual strategy (lick on detected change) and the timing strategy (lick with a fixed probability from the last lick). Moreover, individual mice use a mixture of the two strategies, and the preference of strategies has not only performance correlates (Fig 2G, Fig S5), but the employment of the visual strategy can be mapped to increased activation of the Vip-Sst disinhibitory circuit, which facilitates task- appropriate responses (Fig. 4- 6).</p><p id="71cade64-6c6a-4dd1-86c6-396027296adf" class="">
+</p><p id="a0bfdeae-a80d-4540-addf-64d9bd90b8ba" class="">One particularly interesting aspect is how the strategy preference evolves during training. There could be a few plausible and not mutually exclusive trends that one can observe in the data. For example, that the animals might be constant and maintained their dominant strategy over training. Animal could also show increased preference to the optimal strategy for reward (here, the visual strategy) as training progresses. For the Visual Behavior 2P data, Piet et al. found both trend to be true: that when they classified mice by their dominant strategy (visual or timing) during imaging, <strong>1)</strong> the “visual mice” always have more preference for visual strategy during training and <strong>2)</strong> the preference for visual strategy (indicated by “visual index”) increases over different training stages in particular for the “visual mice” (Fig. S7 A-C).</p><p id="890d8561-97b5-4437-a348-7ca1b861d139" class="">
+</p><p id="58cc8f2a-8bd9-4337-9b26-23f44c40cf93" class="">The rich training design and the well-documented behavior data allow a deeper dive into the training dynamics and how the strategy preferences on the imaging/recording days are shaped. In particular, in the early training sessions,  mice progressed through each training stage by meeting stage-specific criteria. Based on the findings of Piet et al that the mice have a consistent strategy preference, one would hypothesize that the “visual mice” that have a consistent preference for the optimal strategy would progress faster in the training, and they would have experienced less training sessions. In this project we focused on the Allen Visual Behavior Neuropixel dataset, that used the same task as Visual Behavior 2P, but the animals had to meet for additional training criteria and undergo more training sessions after passing all training criteria before they were recorded. I am interested in explore how those different training stages might contribute to the final performance in different ways.</p><p id="194b5311-f4f3-4229-a86b-58a401d2e132" class="">
+</p><figure id="99cef832-f0e4-4f3c-b2bf-f3a122a0ff1e" class="image"><a href="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.001.png"><img style="width:1612px" src="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.001.png"/></a><figcaption><mark class="highlight-yellow"><strong>Fig 1. </strong></mark><mark class="highlight-gray">Ephys sessions model fit.</mark></figcaption></figure><h2 id="aff6a311-6866-45fc-9e07-b38305dc0118" class=""><strong>Methods</strong></h2><p id="8fbadb9f-59f2-42c3-bb99-552c9838c96d" class="">
+</p><p id="331473d9-177d-4dc3-ae19-8336b212ba02" class=""><mark class="highlight-default">Given the limited time, I focused on the wt animals (n = 27). I replicate the same inference framework and applied it to the lick bouts data in ephys sessions, training sessions with the natural image stimuli (</mark><em><mark class="highlight-default">Stage 3-5</mark></em><mark class="highlight-default">) and the habituation sessions. I directly used the parameters in Piet et al for the timing regressor, but for a more rigorous study one should fit a sigmoid regression from scratch. For pre- ephys sessions, omission related strategies was not included. Model fit were evaluated using area under the ROC curve (AUROC) of 10 fold cross-validated model predictions. For AUROC, .5 means chance level prediction and 1 means perfect classification. Average AUC value is 0.816 for ephys sessions, 0.827 for training sessions, and 0.795 for habituation sessions.</mark></p><p id="59e8027a-d021-4462-89b3-6ba095cc8aed" class="">
+</p><p id="a9cb06b5-8616-48e6-bbc8-c8c22f774570" class="">Following Piet et al, we use the absolute value of the change in model evidence after removing either the visual or timing strategies as ‘the ‘visual index’’ and “timing index’’, and deem the difference between the visual index and timing index to be the “strategy index” <mark class="highlight-yellow"><strong>(Fig 1 a-b)</strong></mark>.</p><h2 id="4cdf2e18-ebab-4b1a-9ad5-a3cace15ed56" class=""><strong>Results</strong></h2><p id="ebd40a81-794f-4b61-b0eb-f134f9b43834" class="">
+</p><p id="2e5a927b-0500-41e2-9bb1-72568462f8fb" class=""><strong>Strategy index during recording positively correlates with total session number.</strong> I first fit the model on the 56 ephys sessions and obtain their strategy indices. As concluded in the 2P dataset, higher values of the strategy index tend to result in a higher number of earned rewards, and is positively correlated with a higher D-prime<strong> </strong><mark class="highlight-yellow"><strong>(Fig 1 c-d)</strong></mark>. The strategy index also shows a negative correlation with number of abortion trials and false alarms, suggesting that in those sessions the mice demonstrate good task performance<strong> </strong><mark class="highlight-yellow"><strong>(Fig 1 e-f)</strong></mark>. Before looking into the training sessions, We tested whether mice that have higher strategy index during ephys sessions needed less training session before they became hand-off ready, but only found little correlation <mark class="highlight-yellow"><strong>(Fig 2 a)</strong></mark><strong>.</strong> Interestingly, when we plot the sessions’ strategy index against the total session number till that session animal had experienced, we found a positive correlation, suggesting that more training contributes to the preference for the optimal strategy in recording sessions <mark class="highlight-yellow"><strong>(Fig 2 b)</strong></mark>. Taken both findings together, it suggests that the strategy index in the recording sessions is more of a result due to training, rather than the mice’s initial preferences. </p><figure id="b2d0f704-7b88-49cc-bb7e-98227e033309" class="image"><a href="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/graphics.008.png"><img style="width:708px" src="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/graphics.008.png"/></a><figcaption><mark class="highlight-yellow"><strong>Fig 2. </strong></mark>Strategy index v.s. Trained sessions.</figcaption></figure><p id="809170e3-2f7d-44bc-bccf-31294bae9740" class="">
+</p><p id="247792ec-05af-4a57-b2ee-8c345aabed5e" class=""><strong>Training increases visual strategy preference, but the preference at the end does not reflect the preference in early training.</strong> Examine the strategy index during the training sessions, I found that although individual animals’ strategy use are variable <mark class="highlight-yellow"><strong>(Fig 3 a)</strong></mark>, the overall trend is that the mice became more visual with time <mark class="highlight-yellow"><strong>(Fig 3 b)</strong></mark>. The strategy index correlation with performance metrics during trainings as well <mark class="highlight-yellow"><strong>(Fig 3 c-f)</strong></mark>. I used the ephys sessions’ strategy index to classify mice into “visual dominant” and “timing dominant” (13 timing dominant, 14 visual dominant, using index =5 as the cut-off, see <mark class="highlight-yellow"><strong>Fig 1c</strong></mark>). </p><p id="9436d09b-38d3-4955-a69b-6d740bb30d8b" class="">
+</p><figure id="83346591-ab8a-4fd9-98bb-d6921680e691" class="image"><a href="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.003.png"><img style="width:708px" src="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.003.png"/></a><figcaption><mark class="highlight-yellow"><strong>Fig 3.</strong></mark> Training sessions model fit.</figcaption></figure><p id="14f7c716-b410-4e35-8325-2d678862a46e" class="">
+</p><p id="fdf1aec4-131e-4b1d-9b61-f06226789b7e" class="">Interestingly, when we plot the strategy index during training for the two groups, there was no consistent preference: in fact, before <em>Habituation 1</em>, “timing dominant” mice actually have higher strategy index, meaning that they overall prefer using the visual strategy during those training sessions <mark class="highlight-yellow"><strong>(Fig 4 a)</strong></mark>. Starting from <em>Habituation 1</em>, the average preferences conform with the ephys session classification. In fact, when we use the last two sessions from <em>Stage 5</em> (as there are way more <em>Stage 5</em> sessions than other training sessions), we found the mean preference of the two groups follows the order in ephys session (not shown here).</p><figure id="544cf82e-5424-4660-83cd-f431ea0cf11a" class="image"><a href="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.004.png"><img style="width:1060px" src="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.004.png"/></a><figcaption><mark class="highlight-yellow"><strong>Fig 4.</strong></mark> Reversed Order in strategy preferences over training.</figcaption></figure><p id="6ac6cefe-a6af-4d42-b624-098afb105c79" class="">
+</p><p id="6be83025-93a1-45e1-82ab-6758c8d1ccb2" class=""><strong>Practice makes perfect?</strong> We hypothesize that the reverse order of strategy preference comes from two aspects of training. On one hand, in the training stages where number of training sessions reflects when the performance meet the training criteria, the number of session trained should be negatively correlated with the initial strategy index the mice started with. On the other hand, later in the training, due to the sheer number of practices (plus the session number does not indicate performance threshold), all animals start getting better, and in particular those that has undergone more training, likely by chance, and became mastering of the task and showed strong preference for the optimal strategy. Some correlative result that supports this explanation is that the strategy index shifted from being negatively correlated with session number in<em> Stage 3 </em>and <em>4</em>, to positively correlated in habituation stages, and even more positively correlated during ephys sessions <mark class="highlight-yellow"><strong>(Fig 5 a-e; Fig 3 a)</strong></mark>.  We conclude that in this dataset, the strategy index during ephys session largely reflects the amount of training, rather than the initial strategy preference, although both shaped the evolution of the strategy preferences over training <mark class="highlight-yellow"><strong>(Fig 5 a-e)</strong></mark>.  </p><p id="0daa1935-91d8-4786-8d5f-a38c392d4699" class="">
+</p><figure id="1d65da4f-ce84-4c3d-85ad-a79243215ba3" class="image"><a href="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.005.png"><img style="width:1920px" src="Licking%20Strategy%20Report%20ee4418d04484431190f6b9a9d21c8836/report_figs.005.png"/></a><figcaption><mark class="highlight-yellow"><strong>Fig 5. </strong></mark>Number of sessions v.s strategy index over training.</figcaption></figure><p id="32a82248-1b2e-4437-87ee-af2e5db67bd9" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
