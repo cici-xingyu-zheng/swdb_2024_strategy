@@ -240,7 +240,11 @@ Findings related to training history and strategy preferece:
 ![fig2](/plots/figs/figs.002.png)
 ![fig3](/plots/figs/figs.003.png)
 
+### 09/09/24
+A small [report about](https://pond-nymphea-6cc.notion.site/Licking-Strategy-Report-ee4418d04484431190f6b9a9d21c8836) learning and shaping of strategies!
+
 ***
+
 
 ### General qestions: 
 1. why we see `> 5` consecutive aborted trails? 
